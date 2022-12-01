@@ -1,20 +1,48 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomePage from '../views/HomePage.vue'
+import ListPage from '../views/ListPage.vue'
+import InputPage from '../views/InputPage.vue'
+import EditPage from '../views/EditPage.vue'
+import InputCategoryPage from '../views/CategoryInputPage.vue'
+import EditCategoryPage from '../views/CategoryEditPage.vue'
+import FilterProduct from '../views/FilterProduct.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'homepage',
+    component: HomePage
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/list',
+    name: 'listpage',
+    component: ListPage
+  },
+  {
+    path: '/add',
+    name: 'inputpage',
+    component: InputPage
+  },
+  {
+    path: '/edit/:id',
+    name: 'editpage',
+    component: EditPage
+  },
+  {
+    path: '/categoryin',
+    name: 'cinputpage',
+    component: InputCategoryPage
+  },
+  {
+    path: '/categoryedit/:id',
+    name: 'ceditpage',
+    component: EditCategoryPage
+  },
+  {
+    path: '/filterlist/:id',
+    name: 'FilterProduct',
+    component: FilterProduct
+  },
 ]
 
 const router = createRouter({
